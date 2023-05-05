@@ -1,0 +1,31 @@
+#User function Template for python3
+class Solution:
+    def maximumSumSubarray (self,K,Arr,N):
+        ws=0
+        we=0
+        s=0
+        ans=0
+        while we<N:
+            s+=Arr[we]
+            if(we-ws+1==K):
+                ans=max(ans,s)
+                s-=Arr[ws]
+                ws+=1
+            we+=1
+        return ans
+        # code here 
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+if __name__ == '__main__': 
+    t = int (input ())
+    for _ in range (t):
+        
+        N,K = input().split()
+        N = int(N)
+        K = int(K)
+        Arr = list( map(int,input().strip().split(" ")))
+
+        ob = Solution()
+        print(ob.maximumSumSubarray(K,Arr,N))
+# } Driver Code Ends# WindowSlicingMethod
